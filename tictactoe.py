@@ -38,12 +38,11 @@ def tic_tac_toe():
                 break
             else:
                 entry = input(f"Player {player}\nError. Try again: ")
+        status = check_victory(board, player, player_token)
         if player == 1:
             player = 2
             player_token = 'o'
         elif player == 2:
             player = 1
             player_token = 'x'
-        status = check_victory(board, player, player_token)
-        
-        
+    print_board(board)
