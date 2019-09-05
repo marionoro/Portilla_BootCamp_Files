@@ -65,9 +65,6 @@ class Player:
         self.balance += new_amt
         self.amount_owed += new_amt
     
-    def show_balance(self):
-        print(f'${self.balance}')
-
     def play_game(self):
         while True:
             if self.balance <= 0:
@@ -94,7 +91,7 @@ class Player:
                         outcome = 'win'
                         break
                 while True:
-                    choice = input('Would you like to hit or stand? ')
+                    choice = input("Would you like to hit or stand? ('h' or 's')")
                     choice = choice.strip()
                     choice = choice.lower()
                     if choice == 'hit' or choice == 'h':
@@ -143,5 +140,18 @@ class Player:
                 print(f'You lost ${bet}. Your new balance is ${self.balance}.')
             break
             
-
-
+print('Welcome to BlackJack! Get as close to 21 as you can without going over!')
+starting_balance = int(input('How much money would you like to start with? (only put the number, no $) '))
+player1 = Player(starting_balance)
+while True:
+    new_game_flag = input("Would you like to play a game of blackjack? ('y' or 'n') ")
+    if new_game_flag == 'yes' or new_game_flag == 'y':
+        player1.play_game()
+        add_money_flag = input("Would you like to add money to your balance? ('y' or 'n') ")
+        if add_money_flag == 'yes' or add_money_flag == 'y':
+            added_money = int(input("How much money? (only put the number, no $) "))
+            player1.add_money(added_money)
+            print(f'Your new balance is ${player1.balance}')
+    else:
+        break
+print(f'Thanks for playing! Your final balance is ${player1.balance}.')
