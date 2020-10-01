@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Sep 12 11:19:19 2019
-
-@author: e128068
-"""
-
 from random import random
 from multiprocessing import Pool
 import timeit
