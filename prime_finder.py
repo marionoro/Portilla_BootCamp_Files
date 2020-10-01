@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Sep 12 11:38:54 2019
-
-@author: e128068
-"""
-
 def find_prime():
     primes = []
     for x in range(2, 2**100):
