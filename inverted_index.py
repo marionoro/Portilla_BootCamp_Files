@@ -1,3 +1,4 @@
+# Python Code
 # Creating a full inverted index (reference to document and location in document)
 import os
 import re
